@@ -1,0 +1,12 @@
+---
+- name: Setup Admin-User
+  include_role: 
+    name: user_admin-user
+
+- name: Setup Kubernetes-User
+  include_role: 
+    name: user_k8s
+  when: 
+    - k8s_node is defined
+    - serveNet_ip is defined
+    - kubernetes_engine == "kubeadm"
