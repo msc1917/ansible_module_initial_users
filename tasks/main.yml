@@ -9,4 +9,5 @@
   when: 
     - k8s_node is defined
     - serveNet_ip is defined
-    - kubernetes_engine == "kubeadm"
+    - kubernetes is defined
+    - kubernetes.engine == "kubeadm"
